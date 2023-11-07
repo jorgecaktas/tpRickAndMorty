@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morty</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Rick and Morty</h1>
+        <div id="filtros">
+            <span id="filtroTodos">Todos</span>
+            <span id="filtroMujeres">Mujeres</span>
+            <span id="filtroHombres">Hombres</span>
+            <span id="filtroSinGenero">Sin Genero</span>
+            <span id="filtroDesconocido">Desconocido</span>
+        </div>
+    </header>
+    <main>
+        <p>Personajes en Total: <span id="personajesTotal"></span> (<span id="personajesPaginaActual"></span> en la pagina actual)</p>
+
+        <div id="personajes">
+        </div>
+
+        <div id="paginacion">
+            <button id="botonPrimera">Primer Pag. (<span id="paginaInicial"></span>)</button>
+            <button id="botonAnterior">Anterior</button>
+            <span id="paginaActual"></span>
+            <button id="botonSiguiente">Siguiente</button>
+            <button id="botonUltima">Ultima Pag. (<span id="paginaFinal"></span>)</button>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
