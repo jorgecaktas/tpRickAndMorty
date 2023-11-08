@@ -45,6 +45,10 @@ header {
     transform: scale(1.5);
 }
 
+.card-content {
+    padding: 10px;
+}
+
 #paginacion {
     display: flex;
     justify-content: center;

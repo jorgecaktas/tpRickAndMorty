@@ -43,10 +43,12 @@ const printData = async (arr) => {
                     <img src=${personaje.image} alt="">
                 </div>
                 <div class="card-content">
-                    <p>Nombre:${personaje.name}</p>
-                    <p>Genero:${personaje.gender}</p>
-                    <p>Especies:${personaje.species}
-                    </p>
+                    <p>Nombre: ${personaje.name}</p>
+                    <p>Genero: ${personaje.gender}</p>
+                    <p>Especies: ${personaje.species}</p>
+                    <p>Estado: ${personaje.status}</p>
+                    <p>Origen: ${personaje.origin.name}</p>
+                    <p>Locación: ${personaje.location.name}</p>
                 </div>
             </div>
         </div>
