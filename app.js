@@ -22,6 +22,15 @@ const personajesPaginaActual = document.getElementById(
 );
 const personajes = document.getElementById("personajes");
 
+
+
+
+
+
+
+
+
+
 const printData = async (arr) => {
   paginaFinal = arr.info.pages;
 
@@ -33,6 +42,8 @@ const printData = async (arr) => {
   paginaActualPagination.innerHTML = paginaActual;
 
   let card = "";
+
+
   arr.results.forEach((personaje) => {
     card =
       card +
@@ -49,10 +60,12 @@ const printData = async (arr) => {
                     <p>Estado: ${personaje.status}</p>
                     <p>Origen: ${personaje.origin.name}</p>
                     <p>Locación: ${personaje.location.name}</p>
+                    <p id="personaje${personaje.id}">VER MAS...</p>
                 </div>
             </div>
         </div>
         `;
+    
   });
   personajes.innerHTML = card;
 };
