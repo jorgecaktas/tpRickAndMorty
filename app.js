@@ -24,13 +24,6 @@ const personajes = document.getElementById("personajes");
 
 
 
-
-
-
-
-
-
-
 const printData = async (arr) => {
   paginaFinal = arr.info.pages;
 
@@ -60,7 +53,6 @@ const printData = async (arr) => {
                     <p>Estado: ${personaje.status}</p>
                     <p>Origen: ${personaje.origin.name}</p>
                     <p>Locación: ${personaje.location.name}</p>
-                    <p id="personaje${personaje.id}">VER MAS...</p>
                 </div>
             </div>
         </div>
