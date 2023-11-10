@@ -183,9 +183,6 @@ inputIrA.defaultValue = paginaInicial;
 const botonIrA = document.getElementById("botonIrA");
 
 botonIrA.addEventListener("click", () => {
-  paginaActual = inputIrA.valueAsNumber;
-  getData(paginaActual, filtroActual);
-  console.log(paginaActual);
   if (
     inputIrA.valueAsNumber >= paginaInicial &&
     inputIrA.valueAsNumber <= paginaFinal
