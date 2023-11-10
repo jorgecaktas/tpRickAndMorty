@@ -10,16 +10,15 @@
     <header>
         <div><h1>Rick and Morty</h1></div>
         <div id="filtros">
-            <span id="filtroTodos"> Todos </span>|
-            <span id="filtroMujeres"> Mujeres </span>|
-            <span id="filtroHombres"> Hombres </span>|
-            <span id="filtroSinGenero"> Sin Genero </span>|
-            <span id="filtroDesconocido"> Desconocido </span>
+            <span id="filtroTodos" class="filtros"> Todos </span>|
+            <span id="filtroMujeres" class="filtros"> Mujeres </span>|
+            <span id="filtroHombres" class="filtros"> Hombres </span>|
+            <span id="filtroSinGenero" class="filtros"> Sin Genero </span>|
+            <span id="filtroDesconocido" class="filtros"> Desconocido </span>
         </div>
     </header>
     <main>
         <p>Personajes en Total: <span id="personajesTotal"></span> (<span id="personajesPaginaActual"></span> en la pagina actual)</p>
-        
         <div id="personajes">
         </div>
 
@@ -29,6 +28,9 @@
             <span id="paginaActual"></span>
             <button id="botonSiguiente" class="boton">Siguiente</button>
             <button id="botonUltima" class="boton">Ultima Pag. (<span id="paginaFinal"></span>)</button>
+        </div>
+        <div id="paginacionIrA">
+            <span id="textoIrA">Ir a la pagina: </span><input type="number" id="numeroIrA"><button id="botonIrA" class="boton">Ir a...</button>
         </div>
     </main>
     <footer>

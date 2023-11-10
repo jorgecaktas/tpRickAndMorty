@@ -2,6 +2,7 @@ let paginaActual = 1;
 let paginaInicial = 1;
 let paginaFinal = 1;
 
+//getData toma la info de la api con el numero de pagina y el filtro de genero como parametros
 const getData = async (pagina, genero) => {
   let URL = ``;
   if (genero === null) {
@@ -11,18 +12,21 @@ const getData = async (pagina, genero) => {
   }
   const response = await fetch(URL);
   const json = await response.json();
+  //luego de tomar la info de la api, ejecuta el printdata con la info ya filtrada, y actualiza los botones
   printData(json);
   updateButtons();
 };
+
+// el getData se ejecuta una vez al principio cuando se carga la pagina
 getData(paginaActual, null);
 
+// mostrar info de personajes
 const personajesTotal = document.getElementById("personajesTotal");
 const personajesPaginaActual = document.getElementById(
   "personajesPaginaActual"
 );
+
 const personajes = document.getElementById("personajes");
-
-
 
 const printData = async (arr) => {
   paginaFinal = arr.info.pages;
@@ -36,7 +40,6 @@ const printData = async (arr) => {
 
   let card = "";
 
-
   arr.results.forEach((personaje) => {
     card =
       card +
@@ -48,21 +51,41 @@ const printData = async (arr) => {
                 </div>
                 <div class="card-content">
                     <p>Nombre: ${personaje.name}</p>
-                    <p>Genero: ${personaje.gender}</p>
+                    <p>Genero: ${
+                      personaje.gender === "Male"
+                        ? "Hombre"
+                        : "" || personaje.gender === "Female"
+                        ? "Mujer"
+                        : "" || personaje.gender === "Genderless"
+                        ? "Sin genero"
+                        : "" || personaje.gender === "unknown"
+                        ? "Desconocido"
+                        : ""
+                    }</p>
                     <p>Especies: ${personaje.species}</p>
-                    <p>Estado: ${personaje.status}</p>
+                    <p>Estado: ${
+                      personaje.status === "Alive"
+                        ? "Vivo"
+                        : "" || personaje.status === "Dead"
+                        ? "Fallecido"
+                        : "" || personaje.status === "unknown"
+                        ? "Desconocido"
+                        : ""
+                    }</p>
                     <p>Origen: ${personaje.origin.name}</p>
                     <p>Locación: ${personaje.location.name}</p>
+                    <a href="https://rickandmortyapi.com/api/character/${
+                      personaje.id
+                    }" target="_blank">VER MAS...</a>
                 </div>
             </div>
         </div>
         `;
-    
   });
   personajes.innerHTML = card;
 };
 
-//filtro de genero
+//filtros de genero
 
 const filtroTodos = document.getElementById("filtroTodos");
 const filtroMujeres = document.getElementById("filtroMujeres");
@@ -151,5 +174,26 @@ botonUltima.addEventListener("click", () => {
   if (paginaActual < paginaFinal) {
     paginaActual = paginaFinal;
     getData(paginaActual, filtroActual);
+  }
+});
+
+const inputIrA = document.getElementById("numeroIrA");
+inputIrA.defaultValue = paginaInicial;
+
+const botonIrA = document.getElementById("botonIrA");
+
+botonIrA.addEventListener("click", () => {
+  paginaActual = inputIrA.valueAsNumber;
+  getData(paginaActual, filtroActual);
+  console.log(paginaActual);
+  if (
+    inputIrA.valueAsNumber >= paginaInicial &&
+    inputIrA.valueAsNumber <= paginaFinal
+  ) {
+    paginaActual = inputIrA.valueAsNumber;
+    getData(paginaActual, filtroActual);
+    console.log(paginaActual);
+  } else {
+    alert("pagina no existe");
   }
 });

@@ -10,6 +10,9 @@ header {
     justify-content: space-between;
 }
 
+.filtros:hover {
+    cursor:pointer;
+}
 
 #personajes {
     display: flex;
@@ -58,6 +61,19 @@ header {
     margin: 10px;
 }
 
+#paginacionIrA {
+    display: flex;
+    justify-content: center;
+}
+
+#textoIrA {
+    margin: 10px;
+}
+
 .boton {
     border: 1px solid black;
+}
+
+.boton:hover {
+    cursor:pointer;
 }
