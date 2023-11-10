@@ -189,7 +189,7 @@ botonIrA.addEventListener("click", () => {
   ) {
     paginaActual = inputIrA.valueAsNumber;
     getData(paginaActual, filtroActual);
-    console.log(paginaActual);
+    // console.log(paginaActual);
   } else {
     alert("pagina no existe");
   }
